@@ -1,0 +1,116 @@
+.exploreContainer {
+  width: 100%;
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.exploreGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-auto-flow: dense; 
+  gap: 4px;
+}
+
+.postWrapper {
+  position: relative;
+  aspect-ratio: 1 / 1; 
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+.tallRight, .tallLeft {
+  grid-row: span 2; 
+  grid-column: span 1; 
+  aspect-ratio: auto; 
+}
+
+.tallRight {
+  grid-column: 3;
+}
+
+.tallLeft {
+  grid-column: 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.postWrapper:hover .overlay {
+  opacity: 1;
+}
+
+.authorLink {
+  text-decoration: none;
+  color: inherit; 
+  font-weight: 600; 
+}
+
+.stats {
+  display: flex;
+  gap: 25px;
+  color: white;
+  pointer-events: auto; 
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  .exploreContainer {
+    padding: 24px 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .exploreContainer {
+    padding: 16px 4px;
+    padding-bottom: 70px;
+  }
+
+  .exploreGrid {
+    gap: 3px;
+  }
+
+  .postWrapper:hover .overlay {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .exploreGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+  }
+
+  .tallRight, .tallLeft {
+    grid-row: auto;
+    grid-column: auto;
+    aspect-ratio: 1 / 1;
+  }
+}

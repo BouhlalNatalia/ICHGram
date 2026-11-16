@@ -1,0 +1,163 @@
+.pageContainer {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 350px;
+  min-width: 350px;
+  border-right: 1px solid #dbdbdb;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.sidebarHeader {
+  padding: 24px 20px;
+  border-bottom: 1px solid #dbdbdb;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.currentUsername {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #000000;
+}
+
+.mobileEmptyBtn {
+  display: none;
+}
+
+.chatListWrapper {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chatArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.mobileBackBtn {
+  display: none;
+}
+
+.emptyState {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  color: #000000;
+}
+
+.emptyIcon {
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.emptyState h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
+.emptyState p {
+  font-size: 14px;
+  color: #737373;
+  margin: 0 0 24px 0;
+}
+
+.emptyBtn {
+  background-color: #0095f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.emptyBtn:hover {
+  background-color: #1877f2;
+}
+
+
+@media screen and (max-width: 900px) {
+  .pageContainer {
+    height: calc(100vh - 55px);
+    position: relative;
+  }
+
+
+  .pageContainer.showSidebar .sidebar {
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .pageContainer.showSidebar .chatArea {
+    display: none;
+  }
+
+
+  .pageContainer.showChatArea .sidebar {
+    display: none;
+  }
+
+  .pageContainer.showChatArea .chatArea {
+    display: flex;
+    width: 100%;
+  }
+
+
+  .mobileBackBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    z-index: 10;
+    padding: 4px;
+  }
+
+  .sidebarHeader {
+    padding: 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobileEmptyBtn {
+    display: block;
+    background-color: #0095f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}

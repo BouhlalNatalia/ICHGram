@@ -1,0 +1,279 @@
+.postCard {
+  background: #fff;
+  margin: 0 auto;
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 37px;
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  max-width: 470px;
+}
+
+.header {
+  padding: 8px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatarLink {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #dbdbdb;
+  padding: 1px;
+}
+
+.metaData {
+  display: flex;
+  align-items: center;
+  font-size: 12px; 
+  gap: 4px;
+  font-family: var(--font-family);
+}
+
+.username {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 129%;
+  color: #000;
+  text-decoration: none;
+}
+
+.username:hover {
+  color: #8e8e8e;
+}
+
+.dot {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 129%;
+  color: #737373;
+}
+
+.time {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 129%;
+  color: #737373;
+}
+
+.followBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 129%;
+  text-align: center;
+  color: #0095f6;
+}
+
+.followBtn:hover {
+  color: #00376b;
+}
+
+.imageContainer {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background-color: #fafafa;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #efefef;
+  position: relative;
+  z-index: 1;
+}
+
+.postImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.contentArea {
+  padding: 0 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0 8px 0;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.likesCount {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 129%;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.caption {
+  display: block; 
+  width: 100%;
+  line-height: 140%;
+  margin-bottom: 4px;
+}
+
+.captionUsername {
+  font-family: var(--font-family);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  color: #262626;
+  display: inline;
+  margin-right: 6px;
+}
+
+.captionText {
+  display: block; 
+  width: 100%;
+  text-align: justify; 
+  font-family: var(--third-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  margin-top: 4px;
+}
+
+.moreLinkBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 4px;
+  font-family: var(--third-family);
+  font-size: 14px;
+  color: #737373;
+  cursor: pointer;
+  font-weight: 400;
+  display: block; 
+  text-align: left;
+}
+
+.moreLinkBtn:hover {
+  color: #000000;
+}
+
+.viewCommentsBtn {
+  font-family: var(--font-family);
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 8px;
+  color: #8e8e8e;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: block;
+  text-align: left;
+}
+
+.viewCommentsBtn:hover {
+  color: #737373;
+}
+
+.menuWrapper {
+  position: relative;
+}
+
+.moreBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #262626;
+}
+
+@media (max-width: 480px) {
+  .postCard {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #efefef;
+  }
+
+  .header {
+    padding: 10px 8px;
+  }
+
+  .metaData {
+    flex-wrap: wrap; 
+    gap: 4px 6px;
+  }
+
+  .username, .time, .dot, .followBtn {
+    font-size: 13px; 
+  }
+
+  .contentArea {
+    padding: 0 10px;
+  }
+
+  .actions {
+    padding: 10px 0 6px 0;
+    gap: 14px;
+  }
+
+  .captionText {
+    font-size: 13px;
+    text-align: left;
+  }
+  
+  .captionUsername, .viewCommentsBtn {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  .metaData {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+  }
+  
+  .followBtn {
+    grid-column: 1 / -1;
+    text-align: left;
+    margin-top: 2px;
+    color: #0095f6;
+  }
+  
+  .metaData > .dot:last-of-type {
+    display: none !important;
+  }
+}

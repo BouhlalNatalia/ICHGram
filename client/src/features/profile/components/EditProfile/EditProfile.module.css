@@ -1,0 +1,170 @@
+.container {
+  width: 100%;
+  max-width: 600px; 
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: clamp(18px, 2vw + 12px, 22px);
+  font-weight: 700;
+  margin-bottom: clamp(16px, 4vw, 30px);
+}
+
+.photoSection {
+  background-color: #efefef;
+  border-radius: 12px;
+  padding: clamp(12px, 3vw, 20px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: clamp(40px, 8vw, 50px);
+  height: clamp(40px, 8vw, 50px);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.usernameLabel {
+  font-weight: 700;
+  font-size: 14px;
+  display: block;
+}
+
+.description {
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+.newPhotoBtn {
+  background-color: #0095f6;
+  color: white;
+  padding: 6px clamp(12px, 2vw, 20px);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.inputGroup {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.inputGroup label {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.inputGroup input, 
+.textarea {
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.saveBtn {
+  width: clamp(160px, 40vw, 210px); 
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.saveBtn:hover {
+  background-color: #1877f2;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  padding: 12px;
+  padding-bottom: 30px; 
+  font-size: 14px;
+  resize: none;
+  display: block;
+  box-sizing: border-box;
+}
+
+.charCounter {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  font-size: 12px;
+  color: #c7c7c7; 
+  pointer-events: none; 
+}
+
+.websiteWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.linkIcon {
+  position: absolute;
+  left: 12px; 
+  color: #8e8e8e; 
+  pointer-events: none; 
+}
+
+.websiteWrapper input {
+  padding-left: 36px; 
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    display: none; 
+  }
+
+  .photoSection {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start; 
+    padding: 16px;
+  }
+
+  .newPhotoBtn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .saveBtn {
+    width: 100%; 
+    max-width: 280px;
+    margin: 30px auto 0 auto; 
+  }
+}

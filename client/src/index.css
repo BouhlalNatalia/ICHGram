@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: "Roboto", sans-serif;
+  --second-family: "STIX Two Math", serif;
+  --third-family: "Inter", sans-serif;
+}
+
+
+body,
+html,
+button,
+input,
+textarea {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #000000;
+}

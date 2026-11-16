@@ -1,0 +1,263 @@
+.modalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  box-sizing: border-box;
+  z-index: 10000;
+}
+
+.modalContent {
+  background: #fff;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  max-height: 550px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-bottom: 0;
+}
+
+
+.closeModalBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid #dbdbdb;
+  height: 42px;
+  min-height: 42px;
+  position: relative;
+}
+
+.headerTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.cancelBtn {
+  position: absolute;
+  left: 16px;
+  background: none;
+  border: none;
+  color: #262626;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.shareBtn {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #0095f6;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shareBtn:disabled {
+  color: #b2dffc;
+  cursor: default;
+}
+
+.modalBody {
+  display: flex;
+  flex: 1;
+}
+
+.photoSection {
+  flex: 1.2;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #dbdbdb;
+  overflow: hidden;
+}
+
+.uploadPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.infoSection {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.captionArea {
+  width: 100%;
+  height: 180px;
+  border: none;
+  resize: none;
+  font-size: 14px;
+  outline: none;
+  padding: 0 16px;
+  font-family: inherit;
+}
+
+.captionFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.emojiBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  color: #8e8e8e;
+}
+
+.charCount {
+  font-size: 12px;
+  color: #c7c7c7;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.emojiWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+.emojiPickerContainer {
+  position: absolute;
+  bottom: 45px;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.imageChangeOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.imageContainer:hover .imageChangeOverlay {
+  opacity: 1;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .modalBody {
+    flex-direction: column;
+  }
+
+  .photoSection {
+    flex: none;
+    height: 300px;
+    border-right: none;
+    border-bottom: 1px solid #dbdbdb;
+  }
+
+  .infoSection {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalOverlay {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .modalContent {
+    max-height: 95vh;
+  }
+
+  .captionArea {
+    height: 120px;
+  }
+
+  .modalHeader {
+    padding: 0 8px;
+  }
+}
