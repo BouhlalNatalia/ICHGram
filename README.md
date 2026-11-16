@@ -4,6 +4,12 @@ A mini Instagram-like social network built as the final project of the Node.js c
 
 ICHGram allows users to create accounts, share photo posts, interact with other users, follow profiles, receive notifications and communicate through real-time chat.
 
+## 🌐 Live Demo
+
+**Try ICHGram online:** [https://ichgram-n0fk.onrender.com](https://ichgram-n0fk.onrender.com)
+
+The application is deployed on Render and publicly accessible.
+
 ![ICHGram Feed](docs/screenshots/feed.png)
 
 ## Features
@@ -34,7 +40,7 @@ ICHGram allows users to create accounts, share photo posts, interact with other 
 **Backend**
 - Node.js
 - Express
-- MongoDB
+- MongoDB Atlas
 - Mongoose
 - JWT
 - bcrypt
@@ -42,6 +48,11 @@ ICHGram allows users to create accounts, share photo posts, interact with other 
 - Cloudinary
 - Socket.IO
 - Nodemailer
+
+**Deployment & Services**
+- Render — application hosting
+- MongoDB Atlas — cloud database
+- Cloudinary — image storage
 
 ## Screenshots
 
@@ -69,11 +80,9 @@ ICHGram allows users to create accounts, share photo posts, interact with other 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/ICHGram.git
+git clone https://github.com/BouhlalNatalia/ICHGram.git
 cd ICHGram
 ```
-
-Replace `YOUR_GITHUB_USERNAME` with your GitHub username.
 
 ### 2. Set up the backend
 
@@ -120,7 +129,7 @@ cd client
 npm install
 ```
 
-Create a `.env` file in the `client` directory:
+For local development, create a `.env` file in the `client` directory:
 
 ```env
 VITE_API_URL=http://localhost:5000/api
@@ -136,13 +145,24 @@ Open the local URL displayed in the terminal, usually:
 
 `http://localhost:5173`
 
+## Deployment
+
+The production application is deployed on **Render**.
+
+- Frontend and backend are served by the same application.
+- MongoDB Atlas is used as the production database.
+- Cloudinary provides persistent cloud storage for uploaded images.
+- Environment variables and credentials are configured in the Render service settings.
+
+**Live application:** [https://ichgram-n0fk.onrender.com](https://ichgram-n0fk.onrender.com)
+
 ## Environment Variables
 
 ### Backend (`server/.env`)
 
 | Variable | Description |
 |---|---|
-| `PORT` | Backend server port (default: 5000) |
+| `PORT` | Backend server port (default: 5000 locally) |
 | `MONGO_URL` | MongoDB connection string |
 | `JWT_SECRET` | Secret key used to sign JWT tokens |
 | `CLIENT_URL` | Frontend URL used for CORS and password-reset links |
@@ -159,7 +179,7 @@ Open the local URL displayed in the terminal, usually:
 
 | Variable | Description |
 |---|---|
-| `VITE_API_URL` | Backend API base URL |
+| `VITE_API_URL` | Backend API base URL for local development |
 
 **Important:** Never commit `.env` files or real credentials to GitHub. Use `.env.example` with placeholder values instead.
 
@@ -219,7 +239,7 @@ The backend provides REST API endpoints for authentication, user profiles, posts
 | Authentication | `POST /api/auth/register`, `/login`, `/forgot-password`, `/reset-password`; `GET /api/auth/me` |
 | Users | `GET /api/users/:id`, `/username/:username`, `/following-activity`; `PUT /api/users/update`, `/change-password` |
 | Search | `GET /api/search?query=`, `/api/users/search?query=` |
-| Follow | `POST /api/follow/:id`, `DELETE /api/follow/:id`; `GET /api/follow/:id/followers`, `/following`; `POST /api/users/:id/follow` |
+| Follow | `POST /api/follow/:id`, `DELETE /api/follow/:id`; `GET /api/follow/:id/followers`, `/following` |
 | Posts | `GET /api/posts`, `/explore/all`, `/user/:id`, `/:id`; `POST /api/posts`; `PUT` and `DELETE /api/posts/:id` |
 | Comments | `GET` and `POST /api/posts/:postId/comments`; `GET` and `POST /api/comments/:postId` |
 | Likes | `POST /api/likes/:postId`, `/api/likes/:postId/comments/:commentId` |
